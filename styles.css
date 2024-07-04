@@ -55,7 +55,18 @@ button:hover {
 
 .input-group {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+}
+
+.input-group input {
+  margin-bottom: 10px;
+  width: calc(33.33% - 10px);
+}
+
+.input-group button {
+  margin-top: 10px;
+  width: 100%;
 }
 
 #transactionOutput, #minimizedTransactionOutput {
@@ -89,5 +100,38 @@ th {
 }
 
 #minimizeForm button {
-  margin-top: 20px; /* Add margin to the minimize button */
+  margin-top: 20px;
+  width: 100%; /* Make the button full width */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .input-group input, .input-group button {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .delete-button {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  input, button {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  th, td {
+    font-size: 12px;
+  }
 }
