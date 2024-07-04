@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SimplyFlow - Minimize Transactions</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional styles for table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .delete-button {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .graph-container {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>FlowPay | Simplifying Transactions</h1>
+    </header>
+    
+    <main>
+      <form id="debtForm">
+        <div class="input-group">
+          <input type="text" id="fromInput" placeholder="From">
+          <input type="text" id="toInput" placeholder="To">
+          <input type="number" id="amountInput" placeholder="Amount">
+          <button type="submit">Add Transaction</button>
+        </div>
+      </form>
+
+      <div id="transactionOutput">
+        <table id="transactionTable">
+          <thead>
+            <tr>
+              <th>From</th>
+              <th>To</th>
+              <th>Amount</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Table rows will be added dynamically -->
+          </tbody>
+        </table>
+        <form id="minimizeForm">
+          <button type="submit">Minimize Transactions</button>
+        </form>
+      </div>
+
+      <div id="minimizedTransactionOutput">
+        <table id="minimizedTransactionTable">
+          <thead>
+            <tr>
+              <th>From</th>
+              <th>To</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Minimized transactions will be added dynamically -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="graph-container" id="graphContainer">
+        <h2>Transaction Graph</h2>
+        <div id="graph"></div>
+      </div>
+
+      <div class="graph-container" id="minimizedGraphContainer">
+        <h2>Minimized Transaction Graph</h2>
+        <div id="minimizedGraph"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://unpkg.com/@hpcc-js/wasm@0.3.8/dist/index.min.js"></script>
+  <script src="https://unpkg.com/d3-graphviz@4.0.0/build/d3-graphviz.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
