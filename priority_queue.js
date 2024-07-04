@@ -66,4 +66,6 @@ class PriorityQueue {
         }
 }
 
+// export to script.js
+
 export default PriorityQueue;

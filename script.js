@@ -1,4 +1,5 @@
 
+// modulated export
 import PriorityQueue from './priority_queue.js'
 
 // Event listener for form submission to add a transaction
